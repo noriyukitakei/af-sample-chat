@@ -1,0 +1,25 @@
+    <div class="card" style="height: 90vh;">
+      <h5 class="card-header">Azure Functionsで作ったチャット</h5>
+      <div #scrollMe class="card-body" style="overflow: auto;">
+        <div id="chat-body">
+          <div class="chat-box" *ngFor="let message of messages">
+            <div class="chat-face">
+              <img src="/assets/{{message.uid}}.png" onError="this.src='/assets/other.png';"width="90" height="90" />
+            </div>
+            <div class="chat-area">
+              <div class="chat-name">{{message.name}}</div>
+              <div class="chat-hukidashi">{{message.message}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="input-group">
+          <input type="text" id="message" name="message" style="width:300px;" class="form-control" [(ngModel)]="message" placeholder="メッセージ入れてね">
+          <div class="input-group-append">
+            <a href="#" id="post" class="btn btn-success" (click)="addMessage()">発言する</a>
+            <a href="#" id="reload" class="btn btn-danger" (click)="ngOnInit()" >更新する</a>
+          </div>
+        </div>
+      </div>
+    </div>

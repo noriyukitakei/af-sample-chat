@@ -1,0 +1,16 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+      window.onload = function onLoad() {
+        var hash = window.location.hash;
+        var params = new URLSearchParams(hash);
+        localStorage.setItem("access_token",params.get('id_token'));
+        location.href="/"; 
+      }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
